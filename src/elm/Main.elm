@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Html exposing (Html, div, text, input)
-import Html.App
 
 
 type alias Model =
@@ -39,8 +38,9 @@ init =
     ( Model "Name" "Placeholder", Cmd.none )
 
 
+main : Program Never Model Msg
 main =
-    Html.App.program
+    Html.program
         { update = update
         , view = view
         , init = init

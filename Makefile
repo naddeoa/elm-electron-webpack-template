@@ -5,7 +5,7 @@ webpack-bundle = build/bundle.js
 
 .PHONY: elm-reactor default electron server
 
-default: webpack-dev-server
+default: server
 
 $(elm-bundle): $(source) node_modules
 	elm make $(source) --output $(elm-bundle)
