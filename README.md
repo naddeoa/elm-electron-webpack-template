@@ -11,7 +11,7 @@ or
 
 ```
 # For browser use
-make electron
+make server
 # then open http://localhost:8000/src/static/electron.html
 ```
 

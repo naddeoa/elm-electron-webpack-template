@@ -1,3 +1,13 @@
+red=`tput setaf 1`
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+blue=`tput setaf 4`
+reset=`tput sgr0`
+
+info="$(blue)[INFO]"
+ok="$(green)[OK]"
+warn="$(yellow)[WARN]"
+error="$(red)[ERROR]"
 
 source = $(shell find ./src/elm -name "*.elm")
 elm-bundle = build/bundle.js
@@ -24,7 +34,7 @@ server:HOST=0.0.0.0
 server:WEBPACK_PORT=8122
 server: node_modules
 	./node_modules/.bin/webpack-dev-server --host $(HOST) --port $(WEBPACK_PORT) --content-base /build/ &
-	@echo "http://$(HOST):$(PORT)/src/static/index.html"
+	@echo "$(info) Visit http://$(HOST):$(PORT)/src/static/electron.html to see bundle$(reset)"
 	python -mSimpleHTTPServer $(PORT)
 
 elm-reactor:
